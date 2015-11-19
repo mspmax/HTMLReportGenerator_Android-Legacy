@@ -30,7 +30,7 @@ Conditions param list is identfied according to above query set,
         conditionsParamList.add("request.request_id");
 ```
 more about conditions, 
-in an instance whne you get more than one condition it should be concatenated like below,
+in an instance where you get more than one condition it should be concatenated like below,
 eg: 
 ```sql
 select * from request_contact where request_id = '{0}' and request_sequence='{1}'
@@ -38,7 +38,7 @@ select * from request_contact where request_id = '{0}' and request_sequence='{1}
 
 So the conditions string should look like : "request.request_id|request.sequence"
 
-List of Parent Tables related to the children entities(Here it's one parent so it should be REQUEST)
+List of Parent Tables related to the children entities(Here it's one parent so it should be REQUEST for all children)
 ```java
         List<String> parentTableList = new ArrayList<>();
         //Parent Table List
@@ -47,7 +47,7 @@ List of Parent Tables related to the children entities(Here it's one parent so i
         parentTableList.add("REQUEST");
 ```
 Report Keys of parent, 
-eg: In this case the primary key of the respective parent table, request is given.
+eg: In this case the primary key of the respective parent table, 'request' is given.
 ```sql
 select * from request where request_id = '{0}'
 ```
@@ -56,14 +56,14 @@ select * from request where request_id = '{0}'
 String[] reportParams= new String[]{"1234"}
 ```
 
-In a composite key situation it can be like below,
+In a composite key situation in a parent table can be like below,
 ```java
 String[] reportParams= new String[]{"1234","564","789"}
 ```
 
 #Template
 
-Report template attributes looks like below(You can check out the "RerquestTemplate-DEMO.html" file in the asset folder). 
+Report template attributes are shown in the following HTML code(You can check out the "RerquestTemplate-DEMO.html" file in the asset folder for the full code). 
 Please note that the attributes included in the template should exactly be like the column names in the respective SQL table structure !!
 
 ```html
@@ -142,7 +142,7 @@ Please note that the attributes included in the template should exactly be like 
 
 ```
 
-Please note that this is a demo app and dummy data is used. Base Reporting logic implementation is in package '/reporting' you can resue it, improve it or destroy it as you like !
+Remember that this is a demo app and dummy data is used(the app was created within just 1.5 days so just by pass the application related bugs ;)). Base Reporting logic implementation is in package '/reporting' you can resue it, improve it or destroy it as you like !
 
 For more info check out my linkedin profile and contact me for any assitance,guidance or whatever,
 Linkedin : http://tinyurl.com/nvhkrq9
