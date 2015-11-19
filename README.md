@@ -1,4 +1,4 @@
-# HTMLReportGenerator - Android
+# HTML5 Report Generator Framework - Android
 The solution is based on the document standard HTML5 and the report template has to be self-contained.
 This means that no external links are allowed in the document.
 All resources used by the document like pictures and film clips has to be encoded as Base64 strings.
