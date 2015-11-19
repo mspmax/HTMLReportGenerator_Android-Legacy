@@ -7,7 +7,6 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.webkit.WebView;
@@ -55,9 +54,7 @@ public class GenerateReportActivity extends AppCompatActivity {
     }
 
     private void generateReportFromTemplate(Hashtable<String, List<String>> repUtill, InputStream inStream) {
-
         GenericReportUtil utillObj = new GenericReportUtil(mReportParams, repUtill.get(REP_PARENTTABLE_KEY), repUtill.get(REP_QUERY_KEY), repUtill.get(REP_CONDITIONPARAMS_KEY), inStream, this);
-
         mGeneratedHTMLReport = utillObj.GenerateReport();
 
         if (mGeneratedHTMLReport == null)
@@ -65,14 +62,12 @@ public class GenerateReportActivity extends AppCompatActivity {
 
     }
 
-
     private class GenerateReportAsync extends AsyncTask<Boolean, Void, Void> {
 
         private ProgressDialog progressDialog;
 
         @Override
         protected void onPreExecute() {
-
             progressDialog = new ProgressDialog(mCxt);
 
             progressDialog.setMessage("Report is being generated...");
@@ -93,7 +88,6 @@ public class GenerateReportActivity extends AppCompatActivity {
             if (!params[0]) {
 
                 AssetManager assetManager = getAssets();
-
                 InputStream input;
                 try {
                     input = assetManager.open(htmltemplateName);
@@ -103,10 +97,7 @@ public class GenerateReportActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-
             }
-
             return null;
         }
 

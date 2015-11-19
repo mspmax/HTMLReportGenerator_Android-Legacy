@@ -1,7 +1,6 @@
 package com.maxino.pandlk.htmlreportgenerator;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,6 @@ public class AboutUsDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.dialog_about_us, container);
-
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         return rootView;

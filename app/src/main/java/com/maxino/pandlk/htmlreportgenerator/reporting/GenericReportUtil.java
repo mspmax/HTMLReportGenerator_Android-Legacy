@@ -177,10 +177,10 @@ public class GenericReportUtil {
 
         Template tmpl = Mustache.compiler().defaultValue("").compile(htmltxt);
 
-        HashMap<String, Object> test = new HashMap<>();
+        HashMap<String, Object> tableMap = new HashMap<>();
 
-        test.put(rootTable.name, rootTable);
-        htmlTemplateOutput = tmpl.execute(test);
+        tableMap.put(rootTable.name, rootTable);
+        htmlTemplateOutput = tmpl.execute(tableMap);
 
         return htmlTemplateOutput;
 
@@ -192,7 +192,6 @@ public class GenericReportUtil {
         Scanner scnr = null;
         scnr = new Scanner(inStream);
 
-
         String htmltxt = "";
         while (scnr.hasNextLine()) {
             htmltxt = htmltxt + scnr.nextLine();
@@ -202,10 +201,10 @@ public class GenericReportUtil {
 
         Template tmpl = Mustache.compiler().defaultValue("").compile(htmltxt);
 
-        HashMap<String, Object> test = new HashMap<>();
+        HashMap<String, Object> tableMap = new HashMap<>();
 
-        test.put(rootTable.name, rootTable);
-        htmlTemplateOutput = tmpl.execute(test);
+        tableMap.put(rootTable.name, rootTable);
+        htmlTemplateOutput = tmpl.execute(tableMap);
 
         return htmlTemplateOutput;
 

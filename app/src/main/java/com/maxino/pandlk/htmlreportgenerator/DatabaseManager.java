@@ -12,7 +12,6 @@ import com.maxino.pandlk.htmlreportgenerator.requestdummyvalues.RequestAttachmen
 import com.maxino.pandlk.htmlreportgenerator.requestdummyvalues.RequestContact;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
@@ -21,7 +20,6 @@ import java.util.Hashtable;
 public class DatabaseManager extends SQLiteOpenHelper {
     private static final String TAG = DatabaseManager.class.getSimpleName();
 
-    // All Static variables
     // Database Version
     private static final int DATABASE_VERSION = 1;
 
